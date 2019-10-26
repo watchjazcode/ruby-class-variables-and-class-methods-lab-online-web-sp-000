@@ -2,26 +2,26 @@ class Song
   
   attr_accessor :name, :artist, :genre
   
-  @@count = 0
+  @@count = 0 #class variables
   @@artists = []
   @@genres = []
   
   
   def initialize(name, artist, genre)
-    @@count += 1
-    @@artists << artist
-    @@genres << genre
-    @name = name
+    @@count += 1 #keeps count of songs added
+    @@artists << artist #artist goes into artist array 
+    @@genres << genre #genre goes into genre array
+    @name = name #instance variables, for each instance that happens
     @artist = artist
     @genre = genre
   end
 
-  def self.count
+  def self.count #class method, allows us to use count outside of class
     @@count
   end
 
-  def self.genres
-    @@genres.uniq
+  def self.genres #class method
+    @@genres.uniq #gives copy of genres with only unique genres
   end
   
   def self.artists
